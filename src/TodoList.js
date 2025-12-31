@@ -57,7 +57,7 @@ setTitleInput("")
   useEffect(()=>{
      const storageTodos = JSON.parse(localStorage.getItem("todos")) ;
   settodos(storageTodos);
-  }, [] );
+  }, [settodos] );
     return (
   
 
@@ -77,7 +77,7 @@ setTitleInput("")
       exclusive
        onChange={changeDisplayedType}
       aria-label="text alignment"
-      color='primary'
+      color='primary ؤ '
     >
       <ToggleButton value="non-completed" aria-label="left aligned">
        غير المنجز
@@ -102,11 +102,12 @@ setTitleInput("")
  
          <Grid sx={{display:"flex"
             , justifyContent:"space-around",alignItems:"center"}} 
-            xs={4}>   <Button disabled={titleInput.length==0} onClick={()=>{
+            xs={4}>   <Button disabled={titleInput.length===0} onClick={()=>{
                handleAddClick();
             }}  style={{width:"85%", height:"100%"}}variant="contained">اضافه</Button></Grid>
 
  </Grid>
+ 
          {/*end grid*/}
 
       </CardContent>
