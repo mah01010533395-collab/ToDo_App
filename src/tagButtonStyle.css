@@ -1,0 +1,22 @@
+.tagButton{
+   background:purple;
+           
+            border:none;
+            color:white;
+            position: absolute;
+
+           border-radius: 10px;
+ 
+          box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 50px;
+            margin-right: auto;
+          
+           
+        
+
+}
+.tagButton:hover{
+    background-color: rgb(88, 0,  88);
+}
