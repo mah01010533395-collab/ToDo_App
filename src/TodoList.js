@@ -64,7 +64,7 @@ setTitleInput("")
       <Container maxWidth="sm" >
         <hh></hh>
         <></>
-        
+        <></>
        <Card style={{
         maxHeight:"80vh",overflow:"scroll"
        }} sx={{ minWidth: 275 }}>
@@ -96,7 +96,11 @@ setTitleInput("")
      {/* START TODOS*/}
    {todosJsx}
      {/* END TODOS*/}
-              {/*start grid*/}
+       <form   onSubmit={(e) => {
+    e.preventDefault(); // يمنع الصفحة من إعادة التحميل
+    if (titleInput.trim() !== "") {
+      handleAddClick(); // ينفذ نفس كود زر الإضافة
+    }}}>       {/*start grid*/}
  <Grid  style={{marginTop:"20px"}} container spacing={0}>
         <Grid sx={{display:"flex",justifyContent:"space-around",alignItems:"center"}
         } xs={8}>  <TextField value={titleInput} onChange={(e)=>{setTitleInput(e.target.value)}} style={{width:"100%"}}
@@ -104,11 +108,14 @@ setTitleInput("")
  
          <Grid sx={{display:"flex"
             , justifyContent:"space-around",alignItems:"center"}} 
-            xs={4}>   <Button disabled={titleInput.length===0} onClick={()=>{
+            xs={4}>   <Button
+            
+   disabled={titleInput.length===0} onClick={()=>{
                handleAddClick();
             }}  style={{width:"85%", height:"100%"}}variant="contained">اضافه</Button></Grid>
 
  </Grid>
+ </form>
  
          {/*end grid*/}
 
